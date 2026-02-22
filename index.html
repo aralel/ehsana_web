@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         Ehsana Landing Page
+         A platform for remote care of parents and relatives
+         Built with Tailwind CSS via CDN
+    ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ehsana - Care for your parents and relatives remotely with peace of mind. Stay connected, monitor wellbeing, and provide support from anywhere.">
+    <meta name="keywords" content="remote care, elderly care, family care, parent care, remote monitoring, wellbeing">
+    <meta name="author" content="Ehsana">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Ehsana - Remote Care for Your Loved Ones">
+    <meta property="og:description" content="Stay connected with your parents and relatives. Monitor their wellbeing and provide support from anywhere in the world.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ehsana.com">
+    
+    <title>Ehsana - Remote Care for Your Loved Ones</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Calm healthcare color palette - Blue for trust, Green for care
+                        primary: {
+                            50: '#EFF6FF',
+                            100: '#DBEAFE',
+                            200: '#BFDBFE',
+                            300: '#93C5FD',
+                            400: '#60A5FA',
+                            500: '#2B7CFF',
+                            600: '#1F6EDC',
+                            700: '#1D4ED8',
+                            800: '#1E40AF',
+                            900: '#1E3A8A',
+                        },
+                        secondary: {
+                            50: '#F0FDF4',
+                            100: '#DCFCE7',
+                            200: '#BBF7D0',
+                            300: '#86EFAC',
+                            400: '#4ADE80',
+                            500: '#22C55E',
+                            600: '#16A34A',
+                            700: '#15803D',
+                            800: '#166534',
+                            900: '#14532D',
+                        },
+                        surface: {
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
+                            300: '#CBD5E1',
+                        },
+                        text: {
+                            900: '#1F2933',
+                            700: '#374151',
+                            500: '#6B7280',
+                            400: '#9CA3AF',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(43, 124, 255, 0.15)',
+                        'soft-lg': '0 10px 40px -10px rgba(43, 124, 255, 0.2)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Custom Styles -->
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Focus styles for accessibility */
+        *:focus-visible {
+            outline: 2px solid #2B7CFF;
+            outline-offset: 2px;
+        }
+        
+        /* Blue to green gradient utilities */
+        .gradient-primary {
+            background: linear-gradient(135deg, #2B7CFF 0%, #22C55E 100%);
+        }
+        
+        .gradient-primary-soft {
+            background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%);
+        }
+        
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #2B7CFF 0%, #22C55E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-text-900 antialiased bg-surface-50">
+    
+    <!-- ============================================
+         NAVIGATION
+    ============================================ -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="/" class="flex items-center space-x-2" aria-label="Ehsana Home">
+                    <img src="ehsana-logo.png" alt="Ehsana Logo" class="h-12">
+                </a>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-primary-600 transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary-600 transition-colors">How It Works</a>
+                    <a href="#signup" class="text-gray-600 hover:text-primary-600 transition-colors">Get Started</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary-600 transition-colors">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <a href="#signup" class="hidden sm:inline-flex items-center px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90 transition-all font-medium shadow-soft">
+                    Join Waitlist
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button 
+                    type="button" 
+                    id="mobile-menu-btn"
+                    class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+                    aria-label="Toggle mobile menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4" role="menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#features" class="text-gray-600 hover:text-primary-600 transition-colors py-2" role="menuitem">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary-600 transition-colors py-2" role="menuitem">How It Works</a>
+                    <a href="#signup" class="text-gray-600 hover:text-primary-600 transition-colors py-2" role="menuitem">Get Started</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary-600 transition-colors py-2" role="menuitem">Contact</a>
+                    <a href="#signup" class="inline-flex items-center justify-center px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90 transition-all font-medium mt-2" role="menuitem">
+                        Join Waitlist
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================ -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-primary-soft" aria-labelledby="hero-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left">
+                    <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        Care for Your <br /><span class="text-gradient-primary">Loved Ones</span><br />From Anywhere
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Ehsana helps you stay connected with your parents and relatives, monitor their wellbeing, and provide support — even when you're miles away. Peace of mind for you, comfort for them.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a 
+                            href="#signup" 
+                            class="inline-flex items-center justify-center px-6 py-3 gradient-primary text-white rounded-xl hover:opacity-90 transition-all transform hover:scale-105 font-semibold text-lg shadow-soft-lg"
+                            aria-label="Join our waitlist"
+                        >
+                            Join the Waitlist
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a 
+                            href="#how-it-works" 
+                            class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-600 border-2 border-primary-200 rounded-xl hover:border-primary-400 hover:bg-primary-50 transition-all font-semibold text-lg shadow-soft"
+                            aria-label="Learn how Ehsana works"
+                        >
+                            See How It Works
+                        </a>
+                    </div>
+                    <!-- Trust Badges -->
+                    <div class="mt-10 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-500">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Free to start</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Privacy focused</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image/Illustration -->
+                <div class="relative hidden lg:block">
+                    <div class="relative w-full h-96 bg-gradient-to-br from-primary-100 via-primary-50 to-secondary-100 rounded-3xl overflow-hidden shadow-soft-lg">
+                        <!-- Decorative elements representing connection -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative">
+                                <!-- Central heart icon -->
+                                <div class="w-24 h-24 bg-white rounded-full shadow-xl flex items-center justify-center">
+                                    <svg class="w-12 h-12 text-red-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </div>
+                                <!-- Connection lines -->
+                                <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 w-0.5 h-12 bg-gradient-to-b from-primary-200 to-primary-400"></div>
+                                <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-0.5 h-12 bg-gradient-to-t from-primary-200 to-primary-400"></div>
+                                <div class="absolute top-1/2 -left-16 transform -translate-y-1/2 h-0.5 w-12 bg-gradient-to-r from-primary-200 to-primary-400"></div>
+                                <div class="absolute top-1/2 -right-16 transform -translate-y-1/2 h-0.5 w-12 bg-gradient-to-l from-primary-200 to-primary-400"></div>
+                                <!-- Person icons around -->
+                                <div class="absolute -top-24 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-secondary-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                </div>
+                                <div class="absolute -bottom-24 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                </div>
+                                <div class="absolute top-1/2 -left-24 transform -translate-y-1/2 w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                </div>
+                                <div class="absolute top-1/2 -right-24 transform -translate-y-1/2 w-12 h-12 bg-secondary-200 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-secondary-700" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURES SECTION
+    ============================================ -->
+    <section id="features" class="py-16 md:py-24 bg-white" aria-labelledby="features-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 id="features-heading" class="text-3xl md:text-4xl font-bold text-gray-900">
+                    Everything You Need for <span class="text-gradient-primary">Remote Care</span>
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Our platform combines simplicity with powerful features to help you stay connected with your loved ones.
+                </p>
+            </div>
+            
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1: Real-time Updates -->
+                <article class="bg-white p-8 rounded-2xl border border-surface-200 hover:shadow-soft-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 gradient-primary rounded-xl flex items-center justify-center mb-6 shadow-soft">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-900 mb-3">Real-time Updates</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Receive gentle notifications about your loved ones' daily activities and wellbeing. Stay informed without being intrusive.
+                    </p>
+                </article>
+                
+                <!-- Feature 2: Health Monitoring -->
+                <article class="bg-white p-8 rounded-2xl border border-surface-200 hover:shadow-soft-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-secondary-500 rounded-xl flex items-center justify-center mb-6 shadow-soft">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-900 mb-3">Wellbeing Insights</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Track wellness patterns and receive insights about your family member's health trends over time. Knowledge brings peace of mind.
+                    </p>
+                </article>
+                
+                <!-- Feature 3: Easy Communication -->
+                <article class="bg-white p-8 rounded-2xl border border-surface-200 hover:shadow-soft-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-primary-500 rounded-xl flex items-center justify-center mb-6 shadow-soft">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-900 mb-3">Simple Communication</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Designed for all ages. Simple, intuitive interface that your parents will actually enjoy using. No tech expertise required.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         HOW IT WORKS SECTION
+    ============================================ -->
+    <section id="how-it-works" class="py-16 md:py-24 bg-gradient-to-b from-surface-100 to-white" aria-labelledby="how-it-works-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 id="how-it-works-heading" class="text-3xl md:text-4xl font-bold text-gray-900">
+                    Get Started in <span class="text-gradient-primary">Three Simple Steps</span>
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Setting up Ehsana is quick and easy. Start caring for your loved ones remotely in minutes.
+                </p>
+            </div>
+            
+            <!-- Steps -->
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Connection line for desktop -->
+                <div class="hidden md:block absolute top-20 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-primary-200 via-secondary-400 to-primary-200" aria-hidden="true"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative text-center">
+                    <div class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-soft-lg relative z-10">
+                        1
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-900 mb-3">Create Your Family Circle</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Sign up and invite your family members. Set up individual profiles for each person you want to stay connected with.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative text-center">
+                    <div class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-soft-lg relative z-10">
+                        2
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-900 mb-3">Set Up Easy Check-ins</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Customize how and when you'd like to receive updates. Choose from daily summaries or real-time notifications.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="relative text-center">
+                    <div class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-soft-lg relative z-10">
+                        3
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-900 mb-3">Stay Connected</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        That's it! Start receiving updates and stay connected with your loved ones no matter the distance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         EMAIL SIGNUP SECTION
+    ============================================ -->
+    <section id="signup" class="py-16 md:py-24 gradient-primary" aria-labelledby="signup-heading">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 id="signup-heading" class="text-3xl md:text-4xl font-bold text-white">
+                Be the First to Experience Ehsana
+            </h2>
+            <p class="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
+                Join our waitlist and get early access when we launch. We'll also send you tips on remote caregiving.
+            </p>
+            
+            <!-- Signup Form -->
+            <form id="signup-form" class="mt-10 max-w-lg mx-auto" action="https://formspree.io/f/xbdazakn" method="POST" aria-label="Email signup form">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex-1">
+                        <label for="email" class="sr-only">Email address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            placeholder="Enter your email address"
+                            class="w-full px-5 py-4 rounded-xl text-text-900 placeholder-text-500 border-2 border-transparent focus:border-secondary-300 focus:ring-0 transition-colors shadow-soft"
+                            aria-describedby="email-hint"
+                        >
+                    </div>
+                    <button 
+                        type="submit" 
+                        class="px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-surface-50 transition-all transform hover:scale-105 shadow-soft-lg whitespace-nowrap"
+                        aria-label="Join waitlist"
+                    >
+                        Join Waitlist
+                    </button>
+                </div>
+                <p id="email-hint" class="mt-4 text-sm text-white/70">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </form>
+            
+            <!-- Success Message (hidden by default) -->
+            <div id="signup-success" class="hidden mt-8 p-6 bg-white/10 rounded-xl">
+                <svg class="w-12 h-12 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <p class="text-white font-medium text-lg">Thank you for joining!</p>
+                <img src="ehsana-quran.png" alt="Ehsana Quran" class="mx-auto">
+                <p class="text-white/80 mt-2">We'll be in touch soon with updates.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TRUST / PRIVACY SECTION
+    ============================================ -->
+    <section id="trust" class="py-16 md:py-24 bg-white" aria-labelledby="trust-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 id="trust-heading" class="text-3xl md:text-4xl font-bold text-gray-900">
+                    Your Privacy is <span class="text-gradient-primary">Our Priority</span>
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    We understand that caring for family is deeply personal. That's why we've built Ehsana with privacy and security at its core.
+                </p>
+            </div>
+            
+            <!-- Trust Badges Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- GDPR Compliant -->
+                <div class="flex flex-col items-center text-center p-6 bg-surface-50 rounded-2xl border border-surface-200 hover:shadow-soft transition-all">
+                    <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-text-900 mb-2">GDPR Compliant</h3>
+                    <p class="text-sm text-gray-600">Full compliance with European data protection regulations.</p>
+                </div>
+                
+                <!-- End-to-End Encryption -->
+                <div class="flex flex-col items-center text-center p-6 bg-surface-50 rounded-2xl border border-surface-200 hover:shadow-soft transition-all">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-text-900 mb-2">Encrypted Data</h3>
+                    <p class="text-sm text-gray-600">Your family's data is encrypted both in transit and at rest.</p>
+                </div>
+                
+                <!-- No Data Selling -->
+                <div class="flex flex-col items-center text-center p-6 bg-surface-50 rounded-2xl border border-surface-200 hover:shadow-soft transition-all">
+                    <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-text-900 mb-2">No Data Selling</h3>
+                    <p class="text-sm text-gray-600">We never sell your personal information to third parties.</p>
+                </div>
+                
+                <!-- User Control -->
+                <div class="flex flex-col items-center text-center p-6 bg-surface-50 rounded-2xl border border-surface-200 hover:shadow-soft transition-all">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-text-900 mb-2">Full Control</h3>
+                    <p class="text-sm text-gray-600">You decide what to share. Delete your data anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer id="contact" class="bg-text-900 text-gray-300" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div class="grid md:grid-cols-4 gap-8 md:gap-12">
+                <!-- Brand Column -->
+                <div class="md:col-span-2">
+                    <a href="/" class="flex items-center space-x-2 mb-4" aria-label="Ehsana Home">
+                        <img src="ehsana-logo.png" alt="Ehsana Logo" class="h-8">
+                    </a>
+                    <p class="text-gray-400 max-w-md leading-relaxed">
+                        Ehsana helps families stay connected across distances. Care for your parents and relatives with peace of mind.
+                    </p>
+                    <div class="mt-6 flex space-x-4">
+                        <!-- Social Links -->
+                        <a href="#" class="text-gray-400 hover:text-secondary-400 transition-colors" aria-label="Follow us on Twitter">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-secondary-400 transition-colors" aria-label="Follow us on LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-secondary-400 transition-colors" aria-label="Follow us on Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-secondary-400 transition-colors">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-secondary-400 transition-colors">How It Works</a></li>
+                        <li><a href="#signup" class="text-gray-400 hover:text-secondary-400 transition-colors">Join Waitlist</a></li>
+                        <li><a href="#trust" class="text-gray-400 hover:text-secondary-400 transition-colors">Privacy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:hello@ehsana.com" class="text-gray-400 hover:text-secondary-400 transition-colors flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                hello@ehsana.com
+                            </a>
+                        </li>
+                        <li>
+                            <span class="text-gray-400 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                                </svg>
+                                www.ehsana.com
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="mt-12 pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-500 text-sm">
+                        &copy; 2026 Ehsana. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-500 hover:text-gray-400 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-400 transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-400 transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+    ============================================ -->
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                    mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close mobile menu when clicking a link
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+            
+            // Smooth scroll for anchor links (fallback for older browsers)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Add scroll-based navbar background
+            const nav = document.querySelector('nav');
+            if (nav) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('shadow-md');
+                    } else {
+                        nav.classList.remove('shadow-md');
+                    }
+                });
+            }
+        });
+    </script>
+    
+    <!-- Formspree Waitlist Handler -->
+    <script src="formspree.js"></script>
+</body>
+</html>
