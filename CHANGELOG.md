@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-05-14
+
+### Changed
+- Transitioned from waitlist model to live signup
+- Updated all "Join Waitlist" CTAs to "Sign Up" with direct links to app.ehsana.com
+- Replaced email signup form section with direct signup CTA
+- Updated navigation and footer links to point to app.ehsana.com
+- Updated signup section headline and copy to reflect live platform status
+- Updated aria-labels for accessibility
+
 ## [1.0.3] - 2026-02-22
 
 ### Changed

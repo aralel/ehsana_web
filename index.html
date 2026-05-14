@@ -154,13 +154,13 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#features" class="text-gray-600 hover:text-primary-600 transition-colors">Features</a>
                     <a href="#how-it-works" class="text-gray-600 hover:text-primary-600 transition-colors">How It Works</a>
-                    <a href="#signup" class="text-gray-600 hover:text-primary-600 transition-colors">Get Started</a>
+                    <a href="https://app.ehsana.com" class="text-gray-600 hover:text-primary-600 transition-colors">Get Started</a>
                     <a href="#contact" class="text-gray-600 hover:text-primary-600 transition-colors">Contact</a>
                 </div>
                 
                 <!-- CTA Button -->
-                <a href="#signup" class="hidden sm:inline-flex items-center px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90 transition-all font-medium shadow-soft">
-                    Join Waitlist
+                <a href="https://app.ehsana.com" class="hidden sm:inline-flex items-center px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90 transition-all font-medium shadow-soft">
+                    Sign Up
                 </a>
                 
                 <!-- Mobile Menu Button -->
@@ -183,10 +183,10 @@
                 <div class="flex flex-col space-y-3">
                     <a href="#features" class="text-gray-600 hover:text-primary-600 transition-colors py-2" role="menuitem">Features</a>
                     <a href="#how-it-works" class="text-gray-600 hover:text-primary-600 transition-colors py-2" role="menuitem">How It Works</a>
-                    <a href="#signup" class="text-gray-600 hover:text-primary-600 transition-colors py-2" role="menuitem">Get Started</a>
+                    <a href="https://app.ehsana.com" class="text-gray-600 hover:text-primary-600 transition-colors py-2" role="menuitem">Get Started</a>
                     <a href="#contact" class="text-gray-600 hover:text-primary-600 transition-colors py-2" role="menuitem">Contact</a>
-                    <a href="#signup" class="inline-flex items-center justify-center px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90 transition-all font-medium mt-2" role="menuitem">
-                        Join Waitlist
+                    <a href="https://app.ehsana.com" class="inline-flex items-center justify-center px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90 transition-all font-medium mt-2" role="menuitem">
+                        Sign Up
                     </a>
                 </div>
             </div>
@@ -208,12 +208,12 @@
                         Ehsana helps you stay connected with your parents and relatives, monitor their wellbeing, and provide support — even when you're miles away. Peace of mind for you, comfort for them.
                     </p>
                     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a 
-                            href="#signup" 
+                        <a
+                            href="https://app.ehsana.com"
                             class="inline-flex items-center justify-center px-6 py-3 gradient-primary text-white rounded-xl hover:opacity-90 transition-all transform hover:scale-105 font-semibold text-lg shadow-soft-lg"
-                            aria-label="Join our waitlist"
+                            aria-label="Sign up now at Ehsana"
                         >
-                            Join the Waitlist
+                            Sign Up Now
                             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
@@ -405,53 +405,29 @@
     </section>
 
     <!-- ============================================
-         EMAIL SIGNUP SECTION
+         SIGNUP SECTION
     ============================================ -->
     <section id="signup" class="py-16 md:py-24 gradient-primary" aria-labelledby="signup-heading">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 id="signup-heading" class="text-3xl md:text-4xl font-bold text-white">
-                Be the First to Experience Ehsana
+                Start Caring Today
             </h2>
             <p class="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
-                Join our waitlist and get early access when we launch. We'll also send you tips on remote caregiving.
+                Ehsana is live and ready to help you stay connected with your loved ones. Sign up now and start using our platform.
             </p>
-            
-            <!-- Signup Form -->
-            <form id="signup-form" class="mt-10 max-w-lg mx-auto" action="https://formspree.io/f/xbdazakn" method="POST" aria-label="Email signup form">
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <div class="flex-1">
-                        <label for="email" class="sr-only">Email address</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            required
-                            placeholder="Enter your email address"
-                            class="w-full px-5 py-4 rounded-xl text-text-900 placeholder-text-500 border-2 border-transparent focus:border-secondary-300 focus:ring-0 transition-colors shadow-soft"
-                            aria-describedby="email-hint"
-                        >
-                    </div>
-                    <button 
-                        type="submit" 
-                        class="px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-surface-50 transition-all transform hover:scale-105 shadow-soft-lg whitespace-nowrap"
-                        aria-label="Join waitlist"
-                    >
-                        Join Waitlist
-                    </button>
-                </div>
-                <p id="email-hint" class="mt-4 text-sm text-white/70">
-                    We respect your privacy. Unsubscribe at any time.
-                </p>
-            </form>
-            
-            <!-- Success Message (hidden by default) -->
-            <div id="signup-success" class="hidden mt-8 p-6 bg-white/10 rounded-xl">
-                <svg class="w-12 h-12 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <p class="text-white font-medium text-lg">Thank you for joining!</p>
-                <img src="ehsana-quran.png" alt="Ehsana Quran" class="mx-auto">
-                <p class="text-white/80 mt-2">We'll be in touch soon with updates.</p>
+
+            <!-- CTA Button -->
+            <div class="mt-10">
+                <a
+                    href="https://app.ehsana.com"
+                    class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-surface-50 transition-all transform hover:scale-105 shadow-soft-lg"
+                    aria-label="Sign up at Ehsana app"
+                >
+                    Go to app.ehsana.com
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -537,17 +513,17 @@
                     </p>
                     <div class="mt-6 flex space-x-4">
                         <!-- Social Links -->
-                        <a href="#" class="text-gray-400 hover:text-secondary-400 transition-colors" aria-label="Follow us on Twitter">
+                        <a href="https://x.com/ehsana_app" class="text-gray-400 hover:text-secondary-400 transition-colors" aria-label="Follow us on Twitter">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
                             </svg>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-secondary-400 transition-colors" aria-label="Follow us on LinkedIn">
+                        <a href="https://www.linkedin.com/company/ehsana" class="text-gray-400 hover:text-secondary-400 transition-colors" aria-label="Follow us on LinkedIn">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-secondary-400 transition-colors" aria-label="Follow us on Facebook">
+                        <a href="https://www.facebook.com/profile.php?id=61589680353240" class="text-gray-400 hover:text-secondary-400 transition-colors" aria-label="Follow us on Facebook">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
                             </svg>
@@ -561,7 +537,7 @@
                     <ul class="space-y-3">
                         <li><a href="#features" class="text-gray-400 hover:text-secondary-400 transition-colors">Features</a></li>
                         <li><a href="#how-it-works" class="text-gray-400 hover:text-secondary-400 transition-colors">How It Works</a></li>
-                        <li><a href="#signup" class="text-gray-400 hover:text-secondary-400 transition-colors">Join Waitlist</a></li>
+                        <li><a href="https://app.ehsana.com" class="text-gray-400 hover:text-secondary-400 transition-colors">Sign Up</a></li>
                         <li><a href="#trust" class="text-gray-400 hover:text-secondary-400 transition-colors">Privacy</a></li>
                     </ul>
                 </div>
